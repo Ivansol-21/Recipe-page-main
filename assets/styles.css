@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+:root {
+    /* colores principlaes */
+    --color-white: rgb(255,255,255);
+    
+    --color-Stone-100: rgb(243,230,216);
+    --color-Stone-150: rgb(228,222,216);
+    --color-Stone-600: rgb(95,87,78);
+    --color-Stone-900: rgb(48,45,44);
+    
+    /* Colores secundarios */
+    --color-Brown: rgb(133,70,50);
+    
+    --color-Rose-800: rgb(123,40,79); 
+    --color-Rose-50: rgb(255,245,250);
+
+    /* Tiporgrafia */
+    --font-Young-Serif: 'Young Serif';
+    --font-Outfit: 'Outfit';
+
+    --font-size-Extra-big: 40px;
+    --font-size-big: 28px;
+    --font-size-medium: 20px;
+    --font-size-small: 16px;
+
+    --line-height: 150%;
+
+    --font-wigth-Regular: 400;    
+    --font-wigth-SemiBold: 600;    
+    --font-wigth-Bold: 700;    
+
+    /* Espaciado */
+    --spacin-extra-large: 123px;
+    --spacin-big: 40px;
+    --spacin-medium: 24px;
+    --spacin-small: 16px;
+}
+
+/* recet basico */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-Stone-100);
+    padding: 123px 20px;
+}
+.recipe {
+    max-width: 737px;
+    background-color: var(--color-white);
+    padding: var(--spacin-big);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.recipe-image{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+.recipe-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+} 
+.recipe-image figure {
+    animation: slider 10s infinite alternate ease-in-out;
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+.recipe-image figure img {
+    width: 100%;
+    object-fit: cover;
+}
+.recipe-image figure:active {
+    animation-play-state: paused;
+}
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    15% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-33.33%);
+    }
+    60% {
+        transform: translateX(-33.33%);
+    }
+    85% {
+        transform: translateX(-66.66%);
+    }
+    100% {
+        transform: translateX(-66.66%);
+    }
+}
+.titulo {
+    padding: var(--spacin-big) 0 0;
+    font-family: var(--font-Young-Serif);
+    font-size: var(--font-size-Extra-big);
+    color: var(--color-Stone-900);
+}
+.descripcion {
+    font-family: var(--font-Outfit);
+    font-size: var(--font-size-small);
+    padding: var(--spacin-medium) 0;
+    color: var(--color-Stone-600);
+    line-height: var(--line-height);
+}
+.preparacion {
+    background-color: var(--color-Rose-50);
+    padding: var(--spacin-medium);
+    font-family: var(--font-Outfit);
+    border-radius: 12px;
+}
+.preparacion header {
+    font-size: var(--font-size-medium);
+    color: var(--color-Rose-800);
+    font-weight: var(--font-wigth-SemiBold);
+}
+.preparacion ul {
+    padding: 0 0 0 var(--spacin-medium);
+}
+.preparacion ul li{
+    padding: var(--spacin-small) 0 0 var(--spacin-small);
+    font-size: var(--font-size-small);
+    color: var(--color-Stone-600);
+}
+.preparacion ul li::marker {
+    color: var(--color-Rose-800);
+}
+.preparacion ul li strong{
+    font-weight: var(--font-wigth-Bold);
+}
+.ingredientes {
+    font-family: var(--font-Outfit);
+}
+.header-Brown {
+    padding: var(--spacin-medium) 0;
+    font-size: var(--font-size-big);
+    color: var(--color-Brown);
+    font-family: var(--font-Young-Serif);
+}
+.ingredientes ul {
+    padding: 0 0 var(--spacin-medium) var(--spacin-medium);
+}
+.ingredientes ul li {
+    padding: 0 0 var(--spacin-small) var(--spacin-small) ;
+    color: var(--color-Stone-600);
+    font-size: var(--font-size-small);
+}
+.ingredientes ul li::marker {
+    color: var(--color-Brown);
+}
+hr {
+    height: 1px;
+    background-color: var(--color-Stone-150);
+    margin: 5px 0;
+}
+.instrucciones {
+    font-family: var(--font-Outfit);
+}
+
+.instrucciones ol {
+    padding: 0 0 var(--spacin-medium) var(--spacin-medium);
+}
+.instrucciones ol li {
+    padding: 0 0 var(--spacin-small) var(--spacin-small) ;
+    color: var(--color-Stone-600);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height);
+}
+.instrucciones ol li strong {
+    font-weight: var(--font-wigth-Bold);
+}
+.instrucciones ol li::marker {
+    color: var(--color-Brown);
+    font-weight: var(--font-wigth-SemiBold);
+}
+.nutricion {
+    font-family: var(--font-Outfit);
+}
+.nutricion p {
+    padding: 0 0 8px;
+    color: var(--color-Stone-600);
+}
+.nutricion table {
+    width: 100%;
+    color: var(--color-Stone-600);
+    /* Elimina el padding de la tabla */
+    /* padding: 0 var(--spacin-big) 0 var(--spacin-medium); */
+    border-collapse: collapse;
+}
+.nutricion table tbody tr td {
+    padding: var(--spacin-small) 0 var(--spacin-small) 32px;
+    border-bottom: 1px solid var(--color-Stone-150);
+}
+.padding-td-2 { 
+    padding: var(--spacin-small) 30px var(--spacin-small) 0 !important;
+}
+.border-none {
+    border: none !important;
+}
+.nutricion table tbody tr td strong {
+    color: var(--color-Brown);
+    font-weight: var(--font-wigth-Bold);
+}
+@media screen and (max-width: 375px){
+    main {
+        padding: 0;
+    }
+    .recipe {
+        padding: 0;
+    }
+    .recipe-image {
+        height: 164px;
+        border-radius: 0;
+    }
+    .titulo {
+        font-size: var(--font-size-big);
+        
+    }
+}
