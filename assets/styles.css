@@ -241,7 +241,26 @@ hr {
         border-radius: 0;
     }
     .titulo {
-        font-size: var(--font-size-big);
-        
+        font-size: 36px;
+        padding: var(--spacin-big) var(--spacin-medium) 0;
+    }
+    .descripcion {
+        font-size: 15.8px;
+        padding: var(--spacin-medium);
+    }
+    .preparacion {
+        margin: 0 var(--spacin-medium);
+    }
+    .ingredientes {
+        padding: 0 var(--spacin-medium);
+    }
+    .instrucciones {
+        padding: 0 var(--spacin-medium);
+    }
+    .nutricion {
+        padding: 0 var(--spacin-medium) var(--spacin-medium);
+    }
+    hr {
+        margin: 5px var(--spacin-medium)
     }
 }
